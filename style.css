@@ -1,0 +1,287 @@
+/*
+Theme Name: embeddedSaugat
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: Saugat Sigdel
+Author URI: http://www.saugatsigdel.com.np
+Description: A theme for my personal website
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: embeddedSaugat
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+body{
+	color: #333;
+}
+header .tutorials {
+	height: auto;
+	width: 100%;
+}
+
+nav {
+	opacity: 0.6;
+	position: absolute;
+}
+
+#mobile-demo .dropdown-content {
+	width: 100% !important;
+	background: #111;
+	color: #9e9e9e;
+}
+
+.side-nav li>a {
+	color: #9e9e9e;
+}
+
+.littleDark {
+	background: #111;
+}
+
+.side-nav {
+	background: #333;
+}
+
+.slider {
+	z-index: -1;
+}
+
+.wideBackground {
+	background: url(../images/Raspberrypi.jpg);
+	padding-top: 20px;
+}
+
+.offsetSlider {
+	position: relative;
+	height: 100vh;
+}
+
+.circular-profile {
+	max-height: 200px;
+	max-width: 200px;
+	height: 200px;
+	width: 200px;
+	min-height: 200px;
+	min-width: 200px;
+	margin-top: 10px;
+}
+
+.dark-overlay {
+	background: #333;
+	opacity: 0.9;
+	margin-bottom: 40px;
+}
+
+.primary {
+	background: #8969e8 !important;
+}
+
+.txt-primary {
+	color: #8969e8 !important;
+}
+
+.info {
+	background: #95fffa !important;
+}
+
+.txt-info {
+	color: #95fffa !important;
+}
+
+.danger {
+	background: #ff6a67 !important;
+}
+
+.txt-danger {
+	color: #ff6a67 !important;
+}
+
+.warning {
+	background: #e8c579 !important;
+}
+
+.txt-warning {
+	color: #e8c579 !important;
+}
+
+.success {
+	background: #a0ff67 !important;
+}
+
+.txt-success {
+	color: #a0ff67 !important;
+}
+
+.halfincreasetext {
+	font-size: 1.2em;
+}
+
+.courses .card-panel {
+	padding: 0 !important;
+	margin-top: 0;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.card.small .card-image, .card.medium .card-image, .card.large .card-image
+	{
+	min-height: 60%;
+}
+
+.breathe {
+	padding: 5%;
+}
+
+.courses .small {
+	margin-top: 0px !important;
+}
+
+.courses .card .card-content {
+	padding: 0;
+}
+
+.blog-panel-row {
+	font-size: 1.5em;
+	padding: 0.2em;
+}
+
+.blog-info {
+	padding: 0 !important;
+}
+
+.courseContent {
+	max-height: 115px;
+	overflow: hidden;
+}
+
+.stickToBottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.products {
+	padding: 20px 0 10px 0;
+}
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+.page-footer {
+	background: #333;
+	padding: 10px;
+}
+
+.page-footer .row .col.m3 {
+	padding-left: 0px;
+}
+
+footer li {
+	height: 150px;
+	overflow: hidden;
+	margin-bottom: 4px;
+	background: #555;
+}
+
+footer ul .m3 {
+	height: 70px !important;
+	padding-right: 3px !important;
+}
+
+footer .halfincreasetext {
+	font-weight: bold;
+}
+
+.testimonial-image {
+	height: 100%;
+	width: 100%;
+	margin-left: 0px;
+}
+
+.nav-wrapper ul li a {
+	color: #9e9e9e;
+}
+
+.designation {
+	font-size: .85em;
+	font-style: italic;
+}
+
+.pagination li {
+	display: inline-block;
+	border-radius: 2px;
+	text-align: center;
+	vertical-align: top;
+	height: 34px;
+	padding: 8px;
+	color: #333;
+}
+
+.pagination span li {
+	background: #ee6e73;
+	color: #fff;
+}
+
+.pagination .material-icons {
+	font-size: 35px;
+	color: #333;
+}
+.inline{
+	width: 70%;
+}
+.page-header{
+	margin-top: 65px;
+}
+li.collection-item{
+	padding-left: 10px !important;
+}
+a.collection-item{
+	color: #8969e8 !important;
+}
+
+ul.collection a.active{
+	color: #888 !important;
+	background: #a0ff67 !important;
+}
+#reply-title{
+	font-size: 25px;
+	color: #8969e8;
+	font-weight: bold;
+}
+#cancel-comment-reply-link{
+	color: #ff6a67;	
+}
+h2.comments-title{
+	font-size: 20px;
+}
+.comment-container{
+	margin-top : 100px;
+}
+.display-name{
+	text-transform: capitalize;
+}
+.italic-text{
+	font-style: italic;
+}
+.parent{
+	margin-bottom: 100px;
+}
+.comment-reply-link{
+	color:#ff6a67;
+}
+.comment{
+	margin-bottom: 120px;
+}
+ol article{
+	margin-bottom: 0 !important;
+}
