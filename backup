@@ -1,0 +1,123 @@
+<?php get_header(); ?>
+<section class="container courses">
+<?php
+
+var_dump(get_queried_object());
+$obj = get_queried_object();
+$category = $obj->category_nicename;
+
+$args = [
+    'post_type' => 'post',
+    'posts_per_page' => '1',
+    'category_name' => $category,
+    'order_by' => 'date',
+    'order' => 'DESC'
+];
+$query = new Wp_Query($args);
+?>
+	<h5 class="page-header"><?php echo substr(get_the_archive_title(),10);?></h5>
+	<?php get_search_form();?>
+	<div class="row hide-on-small-only">
+		<?php if($query->have_posts()) : while($query->have_posts()) : $query->the_post();?>
+			<div class="col m4">
+			<div class="card small">
+				<div class="card-image">
+					<a href="<?php echo get_the_permalink(); ?>"><img
+						src="<?php echo get_the_post_thumbnail_url();?>"
+						class="responsive-img"></a>
+						<?php
+        $date = date("d M Y", strtotime(get_the_date()));
+        $day = substr($date, 0, 2);
+        $month = substr($date, 3, 3);
+        $comments_count = wp_count_comments(get_the_id());
+        $comments = $comments_count->approved;
+        ?>
+				</div>
+				<div class="card-content">
+					<div class="row">
+						<div class="col m4 blog-info">
+							<div
+								class="blog-panel-row primary white-text halfincreasetext center-align"><?php echo $day;?></div>
+							<div
+								class="blog-panel-row danger white-text halfincreasetext center-align"><?php echo $month;?></div>
+							<div
+								class="blog-panel-row info txt-danger halfincreasetext center-align">
+								<i class="material-icons">mode_comment</i><?php echo $comments; ?>
+										</div>
+						</div>
+						<div class="col m8">
+							<a href="<?php echo get_the_permalink();?>"> <span
+								class="halfincreasetext txt-primary"><?php echo get_the_title();?></span></a>
+							<p><?php echo get_the_excerpt();?></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+		<?php 
+		$big = 999999999; // need an unlikely integer
+		
+		echo paginate_links( array(
+		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+		'format' => '?paged=%#%',
+		'current' => max( 1, get_query_var('paged') ),
+		'total' => $query->max_num_pages
+		) );
+		?>
+	</div>
+	<?php
+$args = [
+    'post_type' => 'post',
+    'posts_per_page' => '12',
+    'category_name' => $category
+];
+$query = new Wp_Query($args);
+?>
+	<div class="row show-on-small-only hide-on-med-and-up">
+		<?php if($query -> have_posts()) : ?>
+			<?php while($query->have_posts()) : $query->the_post();?>
+				<div class="col s12">
+			<h5>Recent Blogs</h5>
+			<div class="card small">
+				<div class="card-image">
+					<a href="<?php echo get_the_permalink();?>"><img
+						src="<?php echo get_the_post_thumbnail_url();?>"
+						class="responsive-img"></a>
+						<?php
+        $date = date("d M Y", strtotime(get_the_date()));
+        $day = substr($date, 0, 2);
+        $month = substr($date, 3, 3);
+        $comments_count = wp_count_comments(get_the_id());
+        $comments = $comments_count->approved;
+        ?>
+				</div>
+				<div class="card-content">
+					<div class="row">
+						<div class="col s4 blog-info">
+							<div
+								class="blog-panel-row primary white-text halfincreasetext center-align"><?php echo $day; ?></div>
+							<div
+								class="blog-panel-row danger white-text halfincreasetext center-align"><?php echo $month;?></div>
+							<div
+								class="blog-panel-row info txt-danger halfincreasetext center-align">
+								<i class="material-icons">mode_comment</i><?php $comments;?>
+								</div>
+						</div>
+						<div class="col s8">
+							<a href="<?php echo $blogs['life-blog0']['link'];?>"> <span
+								class="halfincreasetext txt-primary"><?php echo get_the_title();?></span></a>
+							<p><?php echo get_the_excerpt();?></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
+			<?php endwhile; ?>
+		<?php endif; ?>
+	</div>
+
+</section>
+<?php get_footer();?>
