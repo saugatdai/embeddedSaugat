@@ -1,0 +1,11 @@
+<?php 
+    if(is_front_page()){
+        get_template_part('/template-parts/header/header','front');
+    }elseif(is_page_template('template-learningblog.php')){
+        get_template_part('/template-parts/header/header','learningblog');
+    }elseif(is_tax()){
+        get_template_part('/template-parts/header/header','tutorials');
+    }else{
+        get_template_part('/template-parts/header/header','normal');
+    }
+?>
